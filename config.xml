@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-packageName="com.OmniaCam.app" id="com.blue2609.workshop" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>OmniaCam</name>
+    <description>
+        A simple camera app to take multiple pictures for patients
+    </description>
+    <author email="tech4smith@gmail.com">
+        Stanley Setiawan
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="AndroidLaunchMode" value="singleInstance" />
+        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+        <preference name="AndroidExtraFilesystems" value="files-external,sdcard,files,documents,cache,cache-external,root" />
+        <icon density="ldpi" platform="android" src="res/icon/android/icon-36-ldpi.png" />
+        <icon density="ldpi" platform="android" src="res/icon/android/icon-48-mdpi.png" />
+        <icon density="hdpi" platform="android" src="res/icon/android/icon-72-hdpi.png" />
+        <icon density="xhdpi" platform="android" src="res/icon/android/icon-96-xhdpi.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <universal-links>
+        <host name="www.omniacorp.com.au">
+            <path event="linkFunctionHandler" url="/cosme/site/inc/omniacam.php*" />
+        </host>
+    </universal-links>
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-multidex" spec="^0.1.4" />
+    <plugin name="cordova-plugin-camera" spec="^3.0.0" />
+    <plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
+    <plugin name="cordova-plugin-file" spec="^5.0.0" />
+    <engine name="android" spec="^6.4.0" />
+</widget>

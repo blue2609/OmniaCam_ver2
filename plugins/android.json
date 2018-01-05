@@ -1,0 +1,46 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-multidex": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-plugin-camera-with-exif": {
+      "PACKAGE_NAME": "com.blue2609.workshop"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "com.OmniaCam.app"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.OmniaCam.app"
+    }
+  }
+}

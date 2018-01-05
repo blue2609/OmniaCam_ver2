@@ -1,0 +1,103 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-camera-with-exif",
+        "scope": null,
+        "escapedName": "cordova-plugin-camera-with-exif",
+        "name": "cordova-plugin-camera-with-exif",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/stanleysetiawan/Google Drive/Cordova/workshop"
+    ]
+  ],
+  "_from": "cordova-plugin-camera-with-exif@latest",
+  "_id": "cordova-plugin-camera-with-exif@1.2.2",
+  "_inCache": true,
+  "_location": "/cordova-plugin-camera-with-exif",
+  "_nodeVersion": "4.4.7",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-camera-with-exif-1.2.2.tgz_1485810996749_0.49198937718756497"
+  },
+  "_npmUser": {
+    "name": "rem-alpha",
+    "email": "bob.moore@alphasoftware.com"
+  },
+  "_npmVersion": "2.15.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-camera-with-exif",
+    "scope": null,
+    "escapedName": "cordova-plugin-camera-with-exif",
+    "name": "cordova-plugin-camera-with-exif",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-camera-with-exif/-/cordova-plugin-camera-with-exif-1.2.2.tgz",
+  "_shasum": "fe4c5f1d68206ba4283aab4d33832b552c229770",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-camera-with-exif",
+  "_where": "/Users/stanleysetiawan/Google Drive/Cordova/workshop",
+  "author": {
+    "name": "@remoorejr"
+  },
+  "bugs": {
+    "url": "https://github.com/remoorejr/cordova-plugin-camera-with-exif/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-camera-with-exif",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova Camera Plugin that will return an image as well as the EXIF data (including GPS location) on iOS and Android devices.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "fe4c5f1d68206ba4283aab4d33832b552c229770",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-camera-with-exif/-/cordova-plugin-camera-with-exif-1.2.2.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "4ae3d931136e981e7854fc0b1b1ba1622b5af2e1",
+  "homepage": "https://github.com/remoorejr/cordova-plugin-camera-with-exif#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "camera",
+    "camera with exif",
+    "exif",
+    "gps",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "rem-alpha",
+      "email": "bob.moore@alphasoftware.com"
+    }
+  ],
+  "name": "cordova-plugin-camera-with-exif",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remoorejr/cordova-plugin-camera-with-exif.git"
+  },
+  "scripts": {},
+  "version": "1.2.2"
+}
