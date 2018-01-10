@@ -94,6 +94,7 @@
     <orderEntry type="library" scope="TEST" name="com.android.support:multidex-1.0.1" level="project" />
     <orderEntry type="library" name="com.android.support:support-media-compat-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-compat-26.1.0" level="project" />
+    <orderEntry type="library" name="__local_aars__:/Users/stanleysetiawan/Google Drive/Cordova/OmniaCam/platforms/android/libs/gson-2.3.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="android.arch.lifecycle:common:1.0.0@jar" level="project" />
     <orderEntry type="library" name="android.arch.core:common:1.0.0@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-fragment-26.1.0" level="project" />
@@ -103,7 +104,6 @@
     <orderEntry type="library" name="com.android.support:appcompat-v7-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:26.1.0@jar" level="project" />
-    <orderEntry type="library" name="__local_aars__:/Users/stanleysetiawan/Google Drive/Cordova/workshop/platforms/android/libs/gson-2.3.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-ui-26.1.0" level="project" />
     <orderEntry type="module" module-name="CordovaLib" />

@@ -18,6 +18,9 @@
  */
 var eventData;
 var previousOrientation;
+var patientPicsButtonPressed = false;
+var treatmentSheetPicsButtonPressed = false;
+
 // var cameraExit;
 var app = {
     // Application Constructor
@@ -28,6 +31,8 @@ var app = {
     //Bind Event Listeners
     bindEvents:function(){
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.addEventListener("resume", onResume, false);
+
     },
 
     // deviceready Event Handler
@@ -36,8 +41,7 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         console.log("Device is ready for work");
-        this.receivedEvent('deviceready');
-        document.addEventListener("resume", onResume, false);
+        this.receivedEvent('patientDetail');
   
         universalLinks.subscribe('linkFunctionHandler',linkFunctionHandler);
     },
@@ -52,19 +56,20 @@ var app = {
     }
 };
 
-function onResume(){
-    console.log("====================PROGRAM RESUMES====================================");
-}
-
 window.addEventListener("orientationchange", function() {
     console.log(screen.orientation.type); // e.g. portrait
 });
+
+function onResume(){
+    console.log("<<<<<<<RESUME THE APP>>>>>>>>>");
+}
 
 
 function linkFunctionHandler(eventData){
 
     //pass the eventData to global variable
     window.eventData = eventData;
+    resetButtonsPressed();
 
     console.log("this subscribed function is executed");
 
@@ -78,18 +83,8 @@ function linkFunctionHandler(eventData){
     var consNumberDisplay = document.querySelector("#consultation_number");
     consNumberDisplay.textContent = consNumber;
 
-    // remove the 2 buttons from html body
-    // var buttonContainer = document.querySelector("#buttonContainer");
-    var divButtonPatient = document.getElementById("divButtonPatient");
-    var divButtonTreatment = document.getElementById("divButtonTreatment");
-
-    if(divButtonPatient){
-        divButtonPatient.parentNode.removeChild(divButtonPatient);
-    }
-
-    if(divButtonTreatment){
-        divButtonTreatment.parentNode.removeChild(divButtonTreatment);
-    }
+    // remove all buttons from html body
+    $("#divButtonPatient,#divButtonTreatment,#divButtonExit").remove();
 
     //add 2 new buttons everytime a new link is passed to the app
     addButtons();
@@ -117,6 +112,13 @@ function addButtons(){
     takeTreatmentSheetPicsButton.addEventListener("click",takeTreatmentSheetPictures);
     takeTreatmentSheetPicsButton.className = "btn btn-positive btn-outlined";
 
+    var exitButton = document.createElement("INPUT")
+    exitButton.setAttribute("id","exitButton");
+    exitButton.setAttribute("type","button");
+    exitButton.setAttribute("value","EXIT APP");
+    exitButton.addEventListener("click",exitApp);
+    exitButton.className = "btn btn-negative btn-outlined noDisplay";
+
     //create div container for the 2 buttons
     var divButtonPatient = document.createElement("DIV");
     divButtonPatient.setAttribute("id","divButtonPatient");
@@ -128,9 +130,15 @@ function addButtons(){
     divButtonTreatment.classList.add("content-padded");
     divButtonTreatment.appendChild(takeTreatmentSheetPicsButton);
 
+    //create the exit app button
+    var divButtonExit = document.createElement("DIV");
+    divButtonExit.setAttribute("id","divButtonExit");
+    divButtonExit.classList.add("content-padded");
+    divButtonExit.appendChild(exitButton);
+
 
     //add the 2  buttons to home view
-    document.body.append(divButtonPatient,divButtonTreatment);
+    document.body.append(divButtonPatient,divButtonTreatment,divButtonExit);
 
 
     //add invisible checklist next to both buttons
@@ -193,12 +201,16 @@ function takePatientPictures(){
 
         //change the margin-right of divButtonPatient after adding the blue tick 
         var parentWidth = $("#divButtonPatient").parent().width();
-        var newRightMargin = (50 - (23/parentWidth * 100)) + "%";
+        var offset = 23/parentWidth * 100;
+        var newRightMargin = (50 - offset) + "%";
 
         console.log("divButtonPatient parent container has a width of" + parentWidth);
         console.log("newRightMargin value is " + newRightMargin);
 
         $("#divButtonPatient").css("margin-right",newRightMargin);
+
+        //tell the app that this button has been pressed
+        window.patientPicsButtonPressed= true;
 
     }
 
@@ -223,15 +235,61 @@ function takeTreatmentSheetPictures(){
 
         //change the margin-right of divButtonTreatment after adding the green tick 
         var parentWidth = $("#divButtonTreatment").parent().width();
-        var newRightMargin = (50 - (33/parentWidth * 100)) + "%";
+        var offset = 33/parentWidth * 100;
+        var newRightMargin = (50 - offset) + "%";
 
         console.log("divButtonTreatment parent container has a width of" + parentWidth);
         console.log("newRightMargin value is " + newRightMargin);
 
         $("#divButtonTreatment").css("margin-right",newRightMargin);
+
+       //tell the app that this button has been pressed
+        window.treatmentSheetPicsButtonPressed= true;
+        // showExitButton();
     }
 
 }
+
+//make the exit button visible
+function showExitButton(){
+
+    console.log("=============================================");
+    //check if treatmentsheetPicsButton is already pressed
+    if(window.patientPicsButtonPressed){
+        console.log("patientPicsButton is already pressed");
+    }
+
+    //check if treatmentsheetPicsButton is already pressed
+    if(window.treatmentSheetPicsButtonPressed){
+        console.log("treamentSheetPicsButton is already pressed");
+    }
+
+    //make the exit button visible
+    if(window.treatmentSheetPicsButtonPressed == true  && window.patientPicsButtonPressed == true){
+        console.log("BOTH BUTTONS ARE ALREADY PRESSED");
+        var exitButton = document.getElementById("exitButton");
+        exitButton.classList.remove("noDisplay");
+    }
+    
+    console.log("=============================================");
+
+}
+
+//make both buttonPressed variables false
+function resetButtonsPressed(){
+    window.patientPicsButtonPressed = false;
+    window.treatmentSheetPicsButtonPressed = false;
+}
+
+function exitApp(){
+
+    resetButtonsPressed();
+
+    // exit app
+    navigator.app.exitApp();
+
+}
+
 
 
 /*
@@ -371,6 +429,7 @@ function saveToNewPath(fileEntry,newImageName,rootDirectory,consFolderName,paren
 
 function cameraExit(errorMessage){
     console.log("Exiting camera");
+    showExitButton();
 }
 
 function onErrorSavingToRootDirectory(){
