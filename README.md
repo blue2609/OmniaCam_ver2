@@ -8,6 +8,14 @@
 &nbsp;
 &nbsp;
 
+# What's new in version 2
+
+This version 2 of the app allows user to take multiple pictures subsequently with a very short delay in between picture taking session (*this rapid fire camera is only impolemented when the user is taking patient pictures*). 
+
+&nbsp;
+&nbsp;
+&nbsp;
+
 # UPDATES/CHANGELOG
 
 ## Saturday, 17th February 2018
@@ -22,13 +30,7 @@
 &nbsp;
 &nbsp;
 
-# What's new in version 2
 
-This version 2 of the app allows user to take multiple pictures subsequently with a very short delay in between picture taking session (*this rapid fire camera is only impolemented when the user is taking patient pictures*). 
-
-&nbsp;
-&nbsp;
-&nbsp;
 
 # Bugs and known Issues
 
