@@ -52,6 +52,9 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <universal-links>
+        <host name="www.cosmedoctors.com.au">
+            <path event="linkFunctionHandler" url="/site/inc/omniacam.php*" />
+        </host>
         <host name="www.omniacorp.com.au">
             <path event="linkFunctionHandler" url="/cosme/site/inc/omniacam.php*" />
         </host>

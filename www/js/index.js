@@ -311,7 +311,8 @@ function takeTreatmentSheetPictures(){
     console.log("takeTreatmentSheetPictures button function is executed");
     window.parentDirectory = "Treatment Sheet Pictures"
     // startCamera(window.eventData);
-    takingPictures(window.eventData,parentDirectory);
+    // takingPictures(window.eventData,parentDirectory);
+    startCamera(window.eventData);
 
     //change the style of the button to button block
     var takeTreatmentSheetPicsButton = document.getElementById("treatmentSheetPicsButton"); 
@@ -388,8 +389,6 @@ function startCamera(eventData){
       x: 0,
       y: 0,
       width: window.screen.width,
-      // height: 500,
-      // width: 500,
       height: window.screen.height,
       camera: CameraPreview.CAMERA_DIRECTION.BACK,
       toBack: true,
@@ -440,11 +439,11 @@ function startCamera(eventData){
               CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
               console.log("<<<<<<CAMERA FLASH IS OFF>>>>");
             }
-      // if(flashMode == "on"){
-      //   console.log("Flash mode is on");
-      // }else{
-      //   console.log("Flash mode is on");
-      // }
+            // if(flashMode == "on"){
+            //   console.log("Flash mode is on");
+            // }else{
+            //   console.log("Flash mode is on");
+            // }
 
             //prevent device from sleeping
             window.plugins.insomnia.keepAwake();

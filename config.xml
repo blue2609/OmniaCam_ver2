@@ -30,11 +30,10 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <universal-links>
+        <host name="www.cosmedoctors.com.au">
+            <path event="linkFunctionHandler" url="/site/inc/omniacam.php*" />
+        </host>
         <host name="www.omniacorp.com.au">
-            <!-- 
-                This one is for document pictures
-                <www.cosmedoctors.com.au> -->
-                    <!-- path = /site/inc/omniacam.php* -->
             <path event="linkFunctionHandler" url="/cosme/site/inc/omniacam.php*" />
         </host>
     </universal-links>
