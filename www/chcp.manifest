@@ -1,0 +1,690 @@
+[
+  {
+    "file": "assets/css/images/ic_action_add.png",
+    "hash": "baed12503802d2707bb807a791d90eb4"
+  },
+  {
+    "file": "assets/css/images/ic_action_arrow_left.png",
+    "hash": "c75486d45c409ebaaa5f84a6a4c0e438"
+  },
+  {
+    "file": "assets/css/images/ic_action_book.png",
+    "hash": "b02e5e524d533b027dc5fedbd6d195db"
+  },
+  {
+    "file": "assets/css/images/ic_action_bookmark.png",
+    "hash": "d0cf138ef2e46c09e41f94ac5a66aa2f"
+  },
+  {
+    "file": "assets/css/images/ic_action_dialog.png",
+    "hash": "561d0bc0bd289004be11cc3218ae5ad0"
+  },
+  {
+    "file": "assets/css/images/ic_action_download.png",
+    "hash": "43d7d5b4726b64b403edb9eb39b75cff"
+  },
+  {
+    "file": "assets/css/images/ic_action_goleft.png",
+    "hash": "ad1ff71722e876b32467e9423096ad13"
+  },
+  {
+    "file": "assets/css/images/ic_action_location.png",
+    "hash": "cf6f9c831d8ecdac7737c68e39a6991d"
+  },
+  {
+    "file": "assets/css/images/ic_action_mail.png",
+    "hash": "91638f739391731fd84ed9967074e997"
+  },
+  {
+    "file": "assets/css/images/ic_action_monolog.png",
+    "hash": "9b12ba3bbe1e0fad18b839fbc2ca6a17"
+  },
+  {
+    "file": "assets/css/images/ic_action_phone_outgoing.png",
+    "hash": "fcf3fe140c805468a69dada593a1bf3c"
+  },
+  {
+    "file": "assets/css/images/ic_action_search.png",
+    "hash": "60e9562a1c637098d172c8d40352db3a"
+  },
+  {
+    "file": "assets/css/images/ic_action_user.png",
+    "hash": "dc63f674dff195f98ff6842904395bf2"
+  },
+  {
+    "file": "assets/css/images/ic_action_users.png",
+    "hash": "d7b8368686ed31543b2bb6629a3a43b2"
+  },
+  {
+    "file": "assets/css/pageslider.css",
+    "hash": "df08f50dce99d1e567c13465de0b3a40"
+  },
+  {
+    "file": "assets/css/styles.css",
+    "hash": "c529ac5ce0f7001cbc6c7df01c0ee340"
+  },
+  {
+    "file": "assets/ratchet/css/ratchet-theme-android.css",
+    "hash": "fda953704aa2d1c64e99435e81fd2006"
+  },
+  {
+    "file": "assets/ratchet/css/ratchet-theme-android.min.css",
+    "hash": "f20ef9293c6dc4a25cf38e731c9fa96c"
+  },
+  {
+    "file": "assets/ratchet/css/ratchet-theme-ios.css",
+    "hash": "55eaa976fe01ad39514268069d5a2b22"
+  },
+  {
+    "file": "assets/ratchet/css/ratchet-theme-ios.min.css",
+    "hash": "71a765d0bf8b36653c4a2f428e3a891e"
+  },
+  {
+    "file": "assets/ratchet/css/ratchet.css",
+    "hash": "06cc1f4e5df13f42fe4298567f57f1a9"
+  },
+  {
+    "file": "assets/ratchet/css/ratchet.min.css",
+    "hash": "3aaee08bec8c8f402c20f67fd0af2fae"
+  },
+  {
+    "file": "assets/ratchet/fonts/ratchicons.eot",
+    "hash": "ea4a08a9d13eac796eb335310c8084f0"
+  },
+  {
+    "file": "assets/ratchet/fonts/ratchicons.svg",
+    "hash": "70e013de33c2337bce7d5e97eae856b2"
+  },
+  {
+    "file": "assets/ratchet/fonts/ratchicons.ttf",
+    "hash": "5f48561abb43ace3f2a761ee719f0113"
+  },
+  {
+    "file": "assets/ratchet/fonts/ratchicons.woff",
+    "hash": "03b48d7ac06a62c5ad76a798683ba177"
+  },
+  {
+    "file": "checkButtons/blueCheck.png",
+    "hash": "8ee4ac45227b7a7a79beed4f9fd1f2b6"
+  },
+  {
+    "file": "checkButtons/greenCheck.jpg",
+    "hash": "7bf7fec75d982922692f014af04286a4"
+  },
+  {
+    "file": "exif-js/bower.json",
+    "hash": "432ae0cbfe3ff33d3b3d20d9fc08a903"
+  },
+  {
+    "file": "exif-js/CHANGELOG.md",
+    "hash": "494e5f000936e1081954bbf55bb2031b"
+  },
+  {
+    "file": "exif-js/example/Bloated-Hero.jpg",
+    "hash": "a74fef82001a60bac240cd275e207ab9"
+  },
+  {
+    "file": "exif-js/example/Bush-dog.jpg",
+    "hash": "fba526bd1911fa5ca4736eb79ff5dde7"
+  },
+  {
+    "file": "exif-js/example/dsc_09827.jpg",
+    "hash": "6a65132a53d4798163125182181c52b6"
+  },
+  {
+    "file": "exif-js/example/DSCN0614_small.jpg",
+    "hash": "d4fc2ab4c68a360879094760b1e63c04"
+  },
+  {
+    "file": "exif-js/example/index.html",
+    "hash": "3ce8689ed79abaefe2bbbdd93cc55f6c"
+  },
+  {
+    "file": "exif-js/exif.d.ts",
+    "hash": "0d57f14c0171d5e8beaeedc2af5d38d1"
+  },
+  {
+    "file": "exif-js/exif.js",
+    "hash": "b5d2a2507093fad88dca17efa4c1da53"
+  },
+  {
+    "file": "exif-js/index.html",
+    "hash": "8f36b6ab6e9526e6873c25e174bb752a"
+  },
+  {
+    "file": "exif-js/LICENSE.md",
+    "hash": "4e53db19bf77823cc7dfd55998b84ab1"
+  },
+  {
+    "file": "exif-js/README.md",
+    "hash": "ad2b63c9a9730faf7f9d21a121786355"
+  },
+  {
+    "file": "exif-js/spec/Exif2-2.pdf",
+    "hash": "2b338c6ade1f3a070504df72929b5dbd"
+  },
+  {
+    "file": "img/camera_medium.png",
+    "hash": "1b58e5a12c19fef5d2404a592bb6b6ce"
+  },
+  {
+    "file": "img/camera.png",
+    "hash": "1e11f40270575a3cbec5e9c1b68107e0"
+  },
+  {
+    "file": "index.html",
+    "hash": "69a9b65f8f1022187e25a66304840ae0"
+  },
+  {
+    "file": "jquery/AUTHORS.txt",
+    "hash": "b71dabe2d6528bf7c0081a4b1a643b53"
+  },
+  {
+    "file": "jquery/bower.json",
+    "hash": "5dc00f10d3c2752e1a1d6f27abbc2062"
+  },
+  {
+    "file": "jquery/dist/core.js",
+    "hash": "0303ee2d8f211aa93f872eb045e51d7f"
+  },
+  {
+    "file": "jquery/dist/jquery.js",
+    "hash": "09dd64a64ba840c31a812a3ca25eaeee"
+  },
+  {
+    "file": "jquery/dist/jquery.min.js",
+    "hash": "c9f5aeeca3ad37bf2aa006139b935f0a"
+  },
+  {
+    "file": "jquery/dist/jquery.min.map",
+    "hash": "193896336e71dd2e6067cdb8b269ddab"
+  },
+  {
+    "file": "jquery/dist/jquery.slim.js",
+    "hash": "697a794a74f337c4302e2d1ff299f402"
+  },
+  {
+    "file": "jquery/dist/jquery.slim.min.js",
+    "hash": "5f48fc77cac90c4778fa24ec9c57f37d"
+  },
+  {
+    "file": "jquery/dist/jquery.slim.min.map",
+    "hash": "75ae04650e43c93953559d40f2a25ba5"
+  },
+  {
+    "file": "jquery/external/sizzle/dist/sizzle.js",
+    "hash": "88f56d86d94c7e2f4589a9312c360c55"
+  },
+  {
+    "file": "jquery/external/sizzle/dist/sizzle.min.js",
+    "hash": "a7da9ea7bd03729fae7b8a8c7a596ed1"
+  },
+  {
+    "file": "jquery/external/sizzle/dist/sizzle.min.map",
+    "hash": "e81187c35ca38a69007d3fa258d0fa72"
+  },
+  {
+    "file": "jquery/external/sizzle/LICENSE.txt",
+    "hash": "e0b826447077aed12f699bc38c726a44"
+  },
+  {
+    "file": "jquery/LICENSE.txt",
+    "hash": "875c9ca6ba54b28d2189a196aa60ce6c"
+  },
+  {
+    "file": "jquery/README.md",
+    "hash": "628ed6ea7e7a59297ca21c5793c56ba7"
+  },
+  {
+    "file": "jquery/src/ajax.js",
+    "hash": "9841f8f3cb2bca0cbc658dc9cef66edb"
+  },
+  {
+    "file": "jquery/src/ajax/jsonp.js",
+    "hash": "54065d23a00581d31b4a33a24d4c1884"
+  },
+  {
+    "file": "jquery/src/ajax/load.js",
+    "hash": "21d96252f08f9b355b349af39ce7236d"
+  },
+  {
+    "file": "jquery/src/ajax/parseXML.js",
+    "hash": "1dc77355e5b4154006c86ed894e5095d"
+  },
+  {
+    "file": "jquery/src/ajax/script.js",
+    "hash": "9878bca97ea247869613a955084e79c5"
+  },
+  {
+    "file": "jquery/src/ajax/var/location.js",
+    "hash": "1effe93501b51c83d7825474e73a8aae"
+  },
+  {
+    "file": "jquery/src/ajax/var/nonce.js",
+    "hash": "bd8ccf8ec6f7fb2ca1c87fa19b147d12"
+  },
+  {
+    "file": "jquery/src/ajax/var/rquery.js",
+    "hash": "0cea5be4c1cb48604c76fe1e49501d9a"
+  },
+  {
+    "file": "jquery/src/ajax/xhr.js",
+    "hash": "938cbba14002684850d1a5670f91e3c2"
+  },
+  {
+    "file": "jquery/src/attributes.js",
+    "hash": "e3b938fc47b1ddf14846fc5cbede18a1"
+  },
+  {
+    "file": "jquery/src/attributes/attr.js",
+    "hash": "e4535aeb388bd9f3d14c373bba24bcd5"
+  },
+  {
+    "file": "jquery/src/attributes/classes.js",
+    "hash": "4820005f22ce0cfa01918c4f80953fcf"
+  },
+  {
+    "file": "jquery/src/attributes/prop.js",
+    "hash": "a3b5116692ba1c0c61d9daec297fa5e9"
+  },
+  {
+    "file": "jquery/src/attributes/support.js",
+    "hash": "87c02d854903b60b55c82f12e5cbb951"
+  },
+  {
+    "file": "jquery/src/attributes/val.js",
+    "hash": "ffabf5f7e8fd6030f2c8926d675bfb49"
+  },
+  {
+    "file": "jquery/src/callbacks.js",
+    "hash": "e7100b9ada3dc043d5e45b9ce08600b8"
+  },
+  {
+    "file": "jquery/src/core.js",
+    "hash": "0303ee2d8f211aa93f872eb045e51d7f"
+  },
+  {
+    "file": "jquery/src/core/access.js",
+    "hash": "45967f27177636396bac684cd1229946"
+  },
+  {
+    "file": "jquery/src/core/DOMEval.js",
+    "hash": "89491487801516d0c1f73720288ef2c2"
+  },
+  {
+    "file": "jquery/src/core/init.js",
+    "hash": "1299abef6cb88e0d16d4993387889321"
+  },
+  {
+    "file": "jquery/src/core/nodeName.js",
+    "hash": "a0a157a603ed1550a056bddabc120c74"
+  },
+  {
+    "file": "jquery/src/core/parseHTML.js",
+    "hash": "984984492643b1081f812b27558d4fd7"
+  },
+  {
+    "file": "jquery/src/core/ready-no-deferred.js",
+    "hash": "2044df0e86a513af88bde00618c8dde1"
+  },
+  {
+    "file": "jquery/src/core/ready.js",
+    "hash": "057984e702d0f10267fb266553151572"
+  },
+  {
+    "file": "jquery/src/core/readyException.js",
+    "hash": "a4eaadadf4d1420be6f30e03ba32c0b2"
+  },
+  {
+    "file": "jquery/src/core/stripAndCollapse.js",
+    "hash": "fab52ba44e0e097a9d8f44c5a4c7fde6"
+  },
+  {
+    "file": "jquery/src/core/support.js",
+    "hash": "a1fdd851ac2e51ceac1e388460c9ea9b"
+  },
+  {
+    "file": "jquery/src/core/var/rsingleTag.js",
+    "hash": "d6ac5fb411468c45818898044af9ccc8"
+  },
+  {
+    "file": "jquery/src/css.js",
+    "hash": "4bb6fe5552170f491b7f470129bb067c"
+  },
+  {
+    "file": "jquery/src/css/addGetHookIf.js",
+    "hash": "39e2ba4bf431074cde3dcef95d1ea269"
+  },
+  {
+    "file": "jquery/src/css/adjustCSS.js",
+    "hash": "a5d386b2b941eed261637e63605026ff"
+  },
+  {
+    "file": "jquery/src/css/curCSS.js",
+    "hash": "e1472083ac4db9819bb38c4da89e1b08"
+  },
+  {
+    "file": "jquery/src/css/hiddenVisibleSelectors.js",
+    "hash": "46ad6606fc658bf81331ac866c8dff05"
+  },
+  {
+    "file": "jquery/src/css/showHide.js",
+    "hash": "54cab17f823997ec76defd99a42fba25"
+  },
+  {
+    "file": "jquery/src/css/support.js",
+    "hash": "a71ff6c5463e17ce7d3933f3dad0cadc"
+  },
+  {
+    "file": "jquery/src/css/var/cssExpand.js",
+    "hash": "97946b11fa6b665f8107a0355ebd21a9"
+  },
+  {
+    "file": "jquery/src/css/var/getStyles.js",
+    "hash": "6c085f1a5b10741fb4f47652d826e8b7"
+  },
+  {
+    "file": "jquery/src/css/var/isHiddenWithinTree.js",
+    "hash": "3ab2e617a068a7281d1aa4bd5c00986b"
+  },
+  {
+    "file": "jquery/src/css/var/rmargin.js",
+    "hash": "3e578e8aa9c5ce7ae7fd345f2768b91e"
+  },
+  {
+    "file": "jquery/src/css/var/rnumnonpx.js",
+    "hash": "76441e4d11353acf6c624b9174c10d28"
+  },
+  {
+    "file": "jquery/src/css/var/swap.js",
+    "hash": "caec1d33fb755d503bba6dde7135b888"
+  },
+  {
+    "file": "jquery/src/data.js",
+    "hash": "9644b22ed614df5b6c5149695af89727"
+  },
+  {
+    "file": "jquery/src/data/Data.js",
+    "hash": "ddc9237f5fc1b9dd589be2dec5a827ad"
+  },
+  {
+    "file": "jquery/src/data/var/acceptData.js",
+    "hash": "784eb09770f6731c4fb5c57207955cfb"
+  },
+  {
+    "file": "jquery/src/data/var/dataPriv.js",
+    "hash": "5793e35236c3a32cb1e4a6b4401211a3"
+  },
+  {
+    "file": "jquery/src/data/var/dataUser.js",
+    "hash": "5793e35236c3a32cb1e4a6b4401211a3"
+  },
+  {
+    "file": "jquery/src/deferred.js",
+    "hash": "336d9e76e9f3d68dd49cee62fc98cea4"
+  },
+  {
+    "file": "jquery/src/deferred/exceptionHook.js",
+    "hash": "bdd1af0b6da071ae9fb638040e56493e"
+  },
+  {
+    "file": "jquery/src/deprecated.js",
+    "hash": "f1410d6f693b75a5bca1c0bf773ae662"
+  },
+  {
+    "file": "jquery/src/dimensions.js",
+    "hash": "53e95f615dee5889f28329e344b47105"
+  },
+  {
+    "file": "jquery/src/effects.js",
+    "hash": "7b435ddc199fc9b6e733805573cc6ad3"
+  },
+  {
+    "file": "jquery/src/effects/animatedSelector.js",
+    "hash": "c6282b6a67db32fcf5e5ed312d8ae626"
+  },
+  {
+    "file": "jquery/src/effects/Tween.js",
+    "hash": "1ededd3dbfc9d3ee6bb1ccd74a947c04"
+  },
+  {
+    "file": "jquery/src/event.js",
+    "hash": "6bf408e943c4126c2eda6bab5ab61966"
+  },
+  {
+    "file": "jquery/src/event/ajax.js",
+    "hash": "ab2368042f88d56a4e8eb7ef0885d52d"
+  },
+  {
+    "file": "jquery/src/event/alias.js",
+    "hash": "4d207f908b195d3cf91e31510e6b1165"
+  },
+  {
+    "file": "jquery/src/event/focusin.js",
+    "hash": "a49297140eed77038234070114fc9e10"
+  },
+  {
+    "file": "jquery/src/event/support.js",
+    "hash": "911a4c1a08cc3b6401cb2d046e148f6a"
+  },
+  {
+    "file": "jquery/src/event/trigger.js",
+    "hash": "ab61fd013893279b68adf30e73ff6cff"
+  },
+  {
+    "file": "jquery/src/exports/amd.js",
+    "hash": "0ce022aabd17f908da7d12221283b8ff"
+  },
+  {
+    "file": "jquery/src/exports/global.js",
+    "hash": "17721874f4081fd75192ae8752ca1fe8"
+  },
+  {
+    "file": "jquery/src/jquery.js",
+    "hash": "4d214954fbc2490c0b5a1757577e4cf7"
+  },
+  {
+    "file": "jquery/src/manipulation.js",
+    "hash": "67af204799eb8818068ab8f6d0e297ba"
+  },
+  {
+    "file": "jquery/src/manipulation/_evalUrl.js",
+    "hash": "273280943dfd7c57f45e531df20aa797"
+  },
+  {
+    "file": "jquery/src/manipulation/buildFragment.js",
+    "hash": "34a2d513f5ed7341c23d8d0d7a4444d4"
+  },
+  {
+    "file": "jquery/src/manipulation/getAll.js",
+    "hash": "9485d5b6e9a8669242045d424b4fe61b"
+  },
+  {
+    "file": "jquery/src/manipulation/setGlobalEval.js",
+    "hash": "45e10fe7bb054db32f6177ac8c190997"
+  },
+  {
+    "file": "jquery/src/manipulation/support.js",
+    "hash": "7278ee59c62f54227229eab552dbe041"
+  },
+  {
+    "file": "jquery/src/manipulation/var/rcheckableType.js",
+    "hash": "5f76cc651dda52520c04b10e96e56604"
+  },
+  {
+    "file": "jquery/src/manipulation/var/rscriptType.js",
+    "hash": "2b1ecb3253a9115c7a0e14d7015d7e40"
+  },
+  {
+    "file": "jquery/src/manipulation/var/rtagName.js",
+    "hash": "2fbe6bcebf3ef64351e4738514bee668"
+  },
+  {
+    "file": "jquery/src/manipulation/wrapMap.js",
+    "hash": "bd6bd7cfc997ee4dbe32d0f46719b9a6"
+  },
+  {
+    "file": "jquery/src/offset.js",
+    "hash": "ab5a9a17f8f2a838d62b85815105fee0"
+  },
+  {
+    "file": "jquery/src/queue.js",
+    "hash": "594e10b2dde30b339a323d240418f620"
+  },
+  {
+    "file": "jquery/src/queue/delay.js",
+    "hash": "6b3b3baf444126f92d5fb08ad67e78ec"
+  },
+  {
+    "file": "jquery/src/selector-native.js",
+    "hash": "09e3c6e382c9dc5e8b4ff8c0684dd0a8"
+  },
+  {
+    "file": "jquery/src/selector-sizzle.js",
+    "hash": "e552c731b58c5253574ff6a4c72730df"
+  },
+  {
+    "file": "jquery/src/selector.js",
+    "hash": "254a3ebd012ddf4c1268afb301fb0804"
+  },
+  {
+    "file": "jquery/src/serialize.js",
+    "hash": "9dd3ba5be24b596336793a4c4672b9dd"
+  },
+  {
+    "file": "jquery/src/traversing.js",
+    "hash": "7d76358e1463f0396d8ecfbc6f55c7f6"
+  },
+  {
+    "file": "jquery/src/traversing/findFilter.js",
+    "hash": "dbfa25a469944debdc85213194aeaba1"
+  },
+  {
+    "file": "jquery/src/traversing/var/dir.js",
+    "hash": "3e37162fe277c99009aef1bc3576cf66"
+  },
+  {
+    "file": "jquery/src/traversing/var/rneedsContext.js",
+    "hash": "f8237f8e3c92d1846c801b8900e70285"
+  },
+  {
+    "file": "jquery/src/traversing/var/siblings.js",
+    "hash": "872fe79c18c63237b878541e25f65792"
+  },
+  {
+    "file": "jquery/src/var/arr.js",
+    "hash": "d88b9159a6350fa26ad2755c2c803842"
+  },
+  {
+    "file": "jquery/src/var/class2type.js",
+    "hash": "8008cada8581f6317a43762b481af585"
+  },
+  {
+    "file": "jquery/src/var/concat.js",
+    "hash": "7479d21ee167a8c9c5c0c6de20944e49"
+  },
+  {
+    "file": "jquery/src/var/document.js",
+    "hash": "28ad506eb48f42c7144716e7f781513c"
+  },
+  {
+    "file": "jquery/src/var/documentElement.js",
+    "hash": "b42747c44c5f46813de9cfc409863bd9"
+  },
+  {
+    "file": "jquery/src/var/fnToString.js",
+    "hash": "779df484d863e0154c7d27ad74144b4b"
+  },
+  {
+    "file": "jquery/src/var/getProto.js",
+    "hash": "cc39bf4d74b2346688c1289d64587ae9"
+  },
+  {
+    "file": "jquery/src/var/hasOwn.js",
+    "hash": "ea807ca4509ac0a9337ee60c8e756acd"
+  },
+  {
+    "file": "jquery/src/var/indexOf.js",
+    "hash": "91f549f495364b948fc51d475276baff"
+  },
+  {
+    "file": "jquery/src/var/ObjectFunctionString.js",
+    "hash": "c81564edaa40fb0aa2a6ff6eb363f2d6"
+  },
+  {
+    "file": "jquery/src/var/pnum.js",
+    "hash": "8bb2e88e531e9cd2bc9059df5b5f0595"
+  },
+  {
+    "file": "jquery/src/var/push.js",
+    "hash": "0fbcbedbfc38e86883db047628486e6b"
+  },
+  {
+    "file": "jquery/src/var/rcssNum.js",
+    "hash": "d05e443af01d56ae50f9ae29b516cdbb"
+  },
+  {
+    "file": "jquery/src/var/rnothtmlwhite.js",
+    "hash": "cd00ba8a3e513c5456e44e91789dd9b4"
+  },
+  {
+    "file": "jquery/src/var/slice.js",
+    "hash": "52a787d2ca995b614bd97d5bf8ae5218"
+  },
+  {
+    "file": "jquery/src/var/support.js",
+    "hash": "2d3a2082ece44cf22f02c83ca6992615"
+  },
+  {
+    "file": "jquery/src/var/toString.js",
+    "hash": "1a5b3ede2aafabfb4b6b1795a012b361"
+  },
+  {
+    "file": "jquery/src/wrap.js",
+    "hash": "76586fa41ac42166ebabb38fed320248"
+  },
+  {
+    "file": "js/exif.js",
+    "hash": "b5d2a2507093fad88dca17efa4c1da53"
+  },
+  {
+    "file": "js/index.js",
+    "hash": "e70996fae7fee822e617b30758eea4e5"
+  },
+  {
+    "file": "js/services/json/EmployeeService.js",
+    "hash": "af0e7987fde70c4d48622e50845566a5"
+  },
+  {
+    "file": "js/services/localstorage/EmployeeService.js",
+    "hash": "473a6804639c6ee71a040b06e6b2aa47"
+  },
+  {
+    "file": "js/services/memory/EmployeeService.js",
+    "hash": "65510134c2ba8e81cbe7a4b90ae768a1"
+  },
+  {
+    "file": "js/services/websql/EmployeeService.js",
+    "hash": "714d156e59118e7936af78478c2e9836"
+  },
+  {
+    "file": "lib/fastclick.js",
+    "hash": "8c5a8b68f45534e273f7cd42d41e26ff"
+  },
+  {
+    "file": "lib/handlebars.js",
+    "hash": "cd131b40916867edd21f981c06c58781"
+  },
+  {
+    "file": "lib/jquery.js",
+    "hash": "6631a779321bc03f4a5281d3ff526254"
+  },
+  {
+    "file": "lib/pageslider.js",
+    "hash": "5c505afa50ec7c9f09f888288fa8465c"
+  },
+  {
+    "file": "lib/router.js",
+    "hash": "6f2dafc03536ffbd750ea05c2c055f71"
+  }
+]

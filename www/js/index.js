@@ -17,9 +17,14 @@
  * under the License.
  */
 var eventData;
-var previousOrientation;
+var parentDirectory;
+var maxHeight = 0;
+var maxWidth = 0;
 var patientPicsButtonPressed = false;
 var treatmentSheetPicsButtonPressed = false;
+var cameraActive = false;
+var flashMode = "off";
+
 
 // var cameraExit;
 var app = {
@@ -32,6 +37,8 @@ var app = {
     bindEvents:function(){
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         document.addEventListener("resume", onResume, false);
+        document.addEventListener("backbutton", backButtonPressed, false);
+        document.addEventListener("pause", onPause, false);
 
     },
 
@@ -58,14 +65,90 @@ var app = {
 
 window.addEventListener("orientationchange", function() {
     console.log(screen.orientation.type); // e.g. portrait
+
+    //restart the camera when screen orientation changes
+    if(cameraActive){
+      console.log("orientation change detected, restarting camera");
+      stopCamera();
+      startCamera(window.eventData);
+    }
+
 });
+
+function onPause(){
+
+    //lock the screen orientation if the camera is active
+    // if(cameraActive){
+    //     screen.orientation.lock(screen.orientation.type);
+    // }
+}
 
 function onResume(){
     console.log("<<<<<<<RESUME THE APP>>>>>>>>>");
+
+
+    //restart the camera when orientation changes
+    if(cameraActive){
+      console.log("App resumes, restarting camera");
+      // screen.orientation.unlock();
+      stopCamera();
+      startCamera(window.eventData);
+    }
+
+}
+
+function backButtonPressed(){
+
+    //if the camera is active, get rid of the camera
+    if(cameraActive){
+
+        CameraPreview.stopCamera();
+
+        console.log("camera is stopped");
+
+        //remove the camera and flash button
+        $('#cameraIcon').remove();
+        $("#flashButton").remove();
+
+        cameraActive = false;
+
+        // document.body.classList.remove("noDisplay");
+        $("body").children().show();
+
+        //set the background color of body to white when camera exits
+        $("body").css("background-color","white");
+
+        //allow the device to go to sleep again
+        window.plugins.insomnia.allowSleepAgain();
+
+    }else{
+        navigator.app.exitApp();
+    }
+}
+
+function doubleDigit(dateOrTime){
+  if(dateOrTime.length < 2){
+    dateOrTime = "0" + dateOrTime; 
+  }
+
+  return dateOrTime;
+
 }
 
 
 function linkFunctionHandler(eventData){
+
+
+
+    /* 
+      ====================================
+          GET RID OF CAMERA INTERFACE 
+      ====================================
+    */
+
+    resetCameraInterface();
+
+
 
     //pass the eventData to global variable
     window.eventData = eventData;
@@ -88,6 +171,11 @@ function linkFunctionHandler(eventData){
 
     //add 2 new buttons everytime a new link is passed to the app
     addButtons();
+
+    //get the focus mode that is currently used by the camera device
+    CameraPreview.getFocusMode(function(currentFocusMode){
+      console.log("The device current focus mode is " + currentFocusMode);
+    });
 
 }
 
@@ -174,16 +262,17 @@ function addButtons(){
 
 }
 
-/* ========================================
-    FUNCTIONS TO REACT TO BUTTON CLICKS
+/* 
+   ========================================
+     FUNCTIONS TO REACT TO BUTTON CLICKS
    ========================================
 */
 
 
 function takePatientPictures(){
     console.log("takePatientPictures button function is executed");
-    var parentDirectory = "Patient Pictures"
-    takingPictures(window.eventData,parentDirectory);
+    window.parentDirectory = "Patient Pictures"
+    startCamera(window.eventData);
 
     //change the style of the button to button block
     var takePatientPicsButton = document.getElementById("patientPicsButton"); 
@@ -211,6 +300,7 @@ function takePatientPictures(){
 
         //tell the app that this button has been pressed
         window.patientPicsButtonPressed= true;
+        showExitButton();
 
     }
 
@@ -219,7 +309,8 @@ function takePatientPictures(){
 
 function takeTreatmentSheetPictures(){
     console.log("takeTreatmentSheetPictures button function is executed");
-    var parentDirectory = "Treatment Sheet Pictures"
+    window.parentDirectory = "Treatment Sheet Pictures"
+    // startCamera(window.eventData);
     takingPictures(window.eventData,parentDirectory);
 
     //change the style of the button to button block
@@ -245,7 +336,7 @@ function takeTreatmentSheetPictures(){
 
        //tell the app that this button has been pressed
         window.treatmentSheetPicsButtonPressed= true;
-        // showExitButton();
+        showExitButton();
     }
 
 }
@@ -254,15 +345,6 @@ function takeTreatmentSheetPictures(){
 function showExitButton(){
 
     console.log("=============================================");
-    //check if treatmentsheetPicsButton is already pressed
-    if(window.patientPicsButtonPressed){
-        console.log("patientPicsButton is already pressed");
-    }
-
-    //check if treatmentsheetPicsButton is already pressed
-    if(window.treatmentSheetPicsButtonPressed){
-        console.log("treamentSheetPicsButton is already pressed");
-    }
 
     //make the exit button visible
     if(window.treatmentSheetPicsButtonPressed == true  && window.patientPicsButtonPressed == true){
@@ -294,9 +376,197 @@ function exitApp(){
 
 /*
 =================================
-TAKING PICTURE FUNCTION
+      STARTING THE CAMERA
 =================================
 */
+function startCamera(eventData){
+    console.log("cameraActive boolean is " + cameraActive);
+
+    $('body').css("background-color","transparent");
+
+    var options = {
+      x: 0,
+      y: 0,
+      width: window.screen.width,
+      // height: 500,
+      // width: 500,
+      height: window.screen.height,
+      camera: CameraPreview.CAMERA_DIRECTION.BACK,
+      toBack: true,
+      tapPhoto: false,
+      tapFocus: true,
+      previewDrag: false
+    }
+
+
+    
+    CameraPreview.startCamera(options, function(){
+
+
+
+        //tell the app that the camera is being used
+        if(!cameraActive){
+            cameraActive = true;
+
+
+            //hide every child inside body element
+            // document.body.classList.add("noDisplay");
+            $("body").children().hide();
+
+
+            //add camera icon at the bottom right to take picture
+            var cameraIcon = document.createElement("IMG");
+            cameraIcon.addEventListener("click",takePicture);
+            cameraIcon.setAttribute("id","cameraIcon");
+
+            //gives the camera ability to turn flash on/off
+            var flashButton = document.createElement("IMG");
+            flashButton.addEventListener("click",changeFlashMode);
+            flashButton.setAttribute("id","flashButton");
+
+
+            document.body.append(cameraIcon,flashButton);
+
+            //give the camera icon an image
+            $("#cameraIcon").attr("src","img/camera_large.png");
+
+            //Give flashButton an image
+            if(flashMode == "on"){
+              $("#flashButton").attr("src","img/flash_on.png");
+              CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.ON);
+              console.log("<<<<<<CAMERA FLASH IS ON>>>>");
+            }else{
+              $("#flashButton").attr("src","img/flash_off.png");
+              CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
+              console.log("<<<<<<CAMERA FLASH IS OFF>>>>");
+            }
+      // if(flashMode == "on"){
+      //   console.log("Flash mode is on");
+      // }else{
+      //   console.log("Flash mode is on");
+      // }
+
+            //prevent device from sleeping
+            window.plugins.insomnia.keepAwake();
+        }
+
+
+    });
+}
+
+function stopCamera(){
+    CameraPreview.stopCamera();
+}
+
+function changeFlashMode(){
+
+  //toggle flash mode on/off
+  if(flashMode == "on"){
+    flashMode = "off";
+    $("#flashButton").attr("src","img/flash_off.png");
+    CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
+
+  }else{
+    flashMode = "on";
+    $("#flashButton").attr("src","img/flash_on.png");
+    CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.ON);
+  }
+
+}
+
+
+/*
+=========================
+ TAKING PICTURE FUNCTION
+=========================
+
+*/
+function takePicture(){
+
+
+    //get the array of supported picture sizes on the device
+    CameraPreview.getSupportedPictureSizes(function(dimensions){
+
+        //get the maximum supported resolution
+        for(var i = 0; i < dimensions.length; i++){
+            //this is just to see if there are any changes is android studio
+            // alert("The resolution of dimension array [" + i + "]" + " is " + dimensions[i].width+ " x " + dimensions[i].height);
+            if(dimensions[i].height > maxHeight && dimensions[i].width > maxWidth){
+                maxHeight = dimensions[i].height;
+                maxWidth = dimensions[i].width;
+            }
+        }
+        // maxWidth = maxWidth * 4;
+        // maxHeight = maxHeight * 4;
+
+        console.log("maximum resolution supported by the camera is " + maxWidth + " x " + maxHeight);
+        // alert("The maximum resolution chosen by OmniaCam app is " + maxWidth + " x " + maxHeight);
+        console.log("maxWidth is " + maxWidth);
+        console.log("maxHeight is " + maxHeight);
+
+        CameraPreview.takePicture({height:maxHeight, width:maxWidth, quality: 100}, function(picture){
+
+
+            var contentType = "image/jpg";
+            var parentDirectory = window.parentDirectory;
+            var date = new Date();
+
+            var consNumber = window.eventData.params['code'];
+            var consFolderName = "cons_" + consNumber;
+
+            //construct a new date/time stamp for the image file
+            var fullDate = date.getFullYear().toString() + 
+                            doubleDigit((date.getMonth() + 1).toString()) + 
+                            doubleDigit(date.getDate().toString());
+            var timeStamp = doubleDigit(date.getHours().toString()) + 
+                            doubleDigit(date.getMinutes().toString()) + 
+                            doubleDigit(date.getSeconds().toString()) + "-" + 
+                            date.getMilliseconds().toString();
+
+            var dateTimeStamp = fullDate + "_" + timeStamp;
+
+
+            //provide a new name for the image
+            var newImageName = consNumber + "_" + dateTimeStamp + ".jpg";
+            console.log("the newImageName is " + newImageName);
+
+            cordova.plugins.diagnostic.getExternalSdCardDetails(function(sdCardArray){
+
+                //save to external SD card if there's any on the device
+                if(sdCardArray.length > 0){
+                    sdCardArray.forEach(function(sdCard){
+                        if(sdCard.canWrite && sdCard.type == "application"){
+
+                            saveToNewPath2(newImageName,sdCard.filePath,consFolderName,parentDirectory,picture,contentType);
+                        }
+                    });
+
+                //otherwise, save it to the device's internal storage 
+                //with root folder as the new parent directory
+                } else{
+                    saveToNewPath2(newImageName,cordova.file.externalRootDirectory,consFolderName,parentDirectory,picture,contentType);
+                }
+
+            }, function(error){
+                console.error(error);
+                console.log("Have trouble with storing in SD Card");
+            });
+        }); 
+
+    });
+
+    //check the values of maxHeight and maxWidth variables
+    // console.log("maxHeight is " + maxHeight);
+    // console.log("maxWidth is " + maxWidth);
+
+}
+
+/*
+=======================================
+ ALTERNATIVE TAKING PICTURE FUNCTION
+=======================================
+*/
+
 function takingPictures(eventData,parentDirectory){
 
 
@@ -385,6 +655,119 @@ function takingPictures(eventData,parentDirectory){
 
 };
 
+function resetCameraInterface(){
+
+  //get rid of camera button and flash icon
+  $("#cameraIcon").remove();
+  $("#flashButton").remove();
+
+  stopCamera();
+
+  cameraActive = false;
+
+  //reset the background color of body to white 
+  $("body").css("background-color","white");
+
+}
+
+/**
+ * Convert a base64 string in a Blob according to the data and contentType.
+ * 
+ * @param b64Data {String} Pure base64 string without contentType
+ * @param contentType {String} the content type of the file i.e (image/jpeg - image/png - text/plain)
+ * @param sliceSize {Int} SliceSize to process the byteCharacters
+ * @see http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
+ * @return Blob
+ */
+function b64toBlob(b64Data, contentType, sliceSize) {
+      contentType = contentType || '';
+      sliceSize = sliceSize || 512;
+
+      var byteCharacters = atob(b64Data);
+      var byteArrays = [];
+
+      for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+          var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+          var byteNumbers = new Array(slice.length);
+          for (var i = 0; i < slice.length; i++) {
+              byteNumbers[i] = slice.charCodeAt(i);
+          }
+
+          var byteArray = new Uint8Array(byteNumbers);
+
+          byteArrays.push(byteArray);
+      }
+
+    var blob = new Blob(byteArrays, {type: contentType});
+    return blob;
+}
+
+
+/**
+ * Create a Image file according to its database64 content only.
+ * 
+ * @param folderpath {String} The folder where the file will be created
+ * @param newImageName {String} The name of the file that will be created
+ * @param content {Base64 String} Important : The content can't contain the following string (data:image/png[or any other format];base64,). Only the base64 string is expected.
+ */
+function savebase64AsImageFile(parentDirectory,filename,content,contentType){
+    // Convert the base64 string in a Blob
+    var DataBlob = b64toBlob(content,contentType);
+    
+    // console.log("Starting to write the file :3");
+    
+    window.resolveLocalFileSystemURL(parentDirectory, function(dir) {
+        // console.log("Access to the directory granted succesfully");
+        dir.getFile(filename, {create:true}, function(file) {
+                // console.log("File created succesfully.");
+                file.createWriter(function(fileWriter) {
+                    // console.log("Writing content to file");
+                    fileWriter.write(DataBlob);
+                }, function(){
+                    console.log('Unable to save file in '+ parentDirectory);
+                });
+        });
+    });
+}
+
+
+//move the image file entry to a new path specified
+function saveToNewPath2(newImageName,rootDirectory,consFolderName,parentDirectory,content,contentType){
+
+    var dataBlob = b64toBlob(content,contentType);
+
+    /* 
+    ========================================================================
+                                SAVE FILE TO:
+    <rootDirectory>/Consulation Images/consFolderName/parentDirectory
+    ========================================================================
+    */
+    window.resolveLocalFileSystemURL(rootDirectory,function(rootDirEntry){
+
+        rootDirEntry.getDirectory("Consultation Images", {create: true}, function(imgDirEntry){
+            imgDirEntry.getDirectory(consFolderName, {create: true}, function(consDirEntry){
+                consDirEntry.getDirectory(parentDirectory, {create: true}, function(parentDirEntry){
+
+                    // console.log("Access to the directory granted succesfully");
+                    parentDirEntry.getFile(newImageName, {create:true}, function(file) {
+                            // console.log("File created succesfully.");
+                            file.createWriter(function(fileWriter) {
+                                // console.log("Writing content to file");
+                                fileWriter.write(dataBlob);
+                            }, function(){
+                                console.log('Unable to save file in '+ parentDirectory);
+                            });
+                    });
+
+                }, onErrorCreatingParentDirEntry);
+
+            }, onErrorCreatingConsDirEntry);
+        }, onErrorCreatingImagesDirEntry);
+
+    });
+
+}
 
 //move the image file entry to a new path specified
 function saveToNewPath(fileEntry,newImageName,rootDirectory,consFolderName,parentDirectory){
@@ -417,7 +800,6 @@ function saveToNewPath(fileEntry,newImageName,rootDirectory,consFolderName,paren
     });
 
 }
-
 
 
 /*

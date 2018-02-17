@@ -8,11 +8,16 @@
  * =====================================================
  */
 
+/*html, body, ion-app, ion-content, ion-page, .nav-decor {
+  background-color: transparent !important;
+}
+*/
 body{
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 22px;
   color: #222;
+  /*background-color: white;*/
 }
 
 
@@ -664,6 +669,27 @@ textarea,
   content: '\e809';
 }
 
+#cameraIcon{
+    position: absolute; 
+    bottom: 0;
+    right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#flashButton{
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  left: 20px;
+  top: 0;
+}
+
+#cameraIcon:active{
+    box-shadow: inset 0 0 106px 106px azure;
+}
+
 @media screen and (orientation: portrait) {
 
   #consultation_number{
@@ -696,6 +722,10 @@ textarea,
     margin-left: 50%;
     margin-right: 50%;
   }
+
+
+
+
 
 }
 
@@ -731,5 +761,7 @@ textarea,
     margin-left: 50%;
     margin-right: 50%;
   }
+
+
 
 }

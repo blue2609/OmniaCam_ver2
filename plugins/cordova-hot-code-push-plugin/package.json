@@ -1,0 +1,108 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/nordnet/cordova-hot-code-push.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/nordnet/cordova-hot-code-push.git",
+        "spec": "git+https://github.com/nordnet/cordova-hot-code-push.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:nordnet/cordova-hot-code-push.git",
+          "sshUrl": "git+ssh://git@github.com/nordnet/cordova-hot-code-push.git",
+          "httpsUrl": "git+https://github.com/nordnet/cordova-hot-code-push.git",
+          "gitUrl": "git://github.com/nordnet/cordova-hot-code-push.git",
+          "shortcut": "github:nordnet/cordova-hot-code-push",
+          "directUrl": "https://raw.githubusercontent.com/nordnet/cordova-hot-code-push/master/package.json"
+        }
+      },
+      "/Users/stanleysetiawan/Google Drive/Cordova/OmniaCam"
+    ]
+  ],
+  "_from": "git+https://github.com/nordnet/cordova-hot-code-push.git",
+  "_id": "cordova-hot-code-push-plugin@1.5.3",
+  "_inCache": true,
+  "_location": "/cordova-hot-code-push-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/nordnet/cordova-hot-code-push.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/nordnet/cordova-hot-code-push.git",
+    "spec": "git+https://github.com/nordnet/cordova-hot-code-push.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:nordnet/cordova-hot-code-push.git",
+      "sshUrl": "git+ssh://git@github.com/nordnet/cordova-hot-code-push.git",
+      "httpsUrl": "git+https://github.com/nordnet/cordova-hot-code-push.git",
+      "gitUrl": "git://github.com/nordnet/cordova-hot-code-push.git",
+      "shortcut": "github:nordnet/cordova-hot-code-push",
+      "directUrl": "https://raw.githubusercontent.com/nordnet/cordova-hot-code-push/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/nordnet/cordova-hot-code-push.git#18f500ab4eed4071e0910acd64a37c1a04ee83f7",
+  "_shasum": "4e53b542030f2225bcd2f60eb4b12c9d53a92e5e",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/nordnet/cordova-hot-code-push.git",
+  "_where": "/Users/stanleysetiawan/Google Drive/Cordova/OmniaCam",
+  "author": {
+    "name": "Nikolay Demyankov for Nordnet Bank AB"
+  },
+  "bugs": {
+    "url": "https://github.com/nordnet/cordova-hot-code-push/issues"
+  },
+  "cordova": {
+    "id": "cordova-hot-code-push-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "xml2js": "^0.4"
+  },
+  "description": "Cordova plugin to perform code updates on the fly",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4"
+    },
+    {
+      "name": "cordova-plugman",
+      "version": ">=4.2.0"
+    }
+  ],
+  "gitHead": "18f500ab4eed4071e0910acd64a37c1a04ee83f7",
+  "homepage": "https://github.com/nordnet/cordova-hot-code-push#readme",
+  "keywords": [
+    "cordova",
+    "nordnet",
+    "mobile",
+    "code",
+    "update",
+    "push",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-hot-code-push-plugin",
+  "optionalDependencies": {},
+  "readme": "# Cordova Hot Code Push Plugin\n\nThis plugin provides functionality to perform automatic updates of the web based content in your application. Basically, everything that is stored in `www` folder of your Cordova project can be updated using this plugin.\n\nWhen you publish your application on the store - you pack in it all your web content: html files, JavaScript code, images and so on. There are two ways how you can update it:\n\n1. Publish new version of the app on the store. But it takes time, especially with the App Store.\n2. Sacrifice the offline feature and load all the pages online. But as soon as Internet connection goes down - application won't work.\n\nThis plugin is intended to fix all that. When user starts the app for the first time - it copies all the web files onto the external storage. From this moment all pages are loaded from the external folder and not from the packed bundle. On every launch plugin connects to your server (with optional authentication, see fetchUpdate() below) and checks if the new version of web project is available for download. If so - it loads it on the device and installs on the next launch.\n\nAs a result, your application receives updates of the web content as soon as possible, and still can work in offline mode. Also, plugin allows you to specify dependency between the web release and the native version to make sure, that new release will work on the older versions of the application.\n\n**Is it fine with App Store?** Yes, it is... as long as your content corresponds to what application is intended for and you don't ask user to click some button to update the web content. For more details please refer to [this wiki page](https://github.com/nordnet/cordova-hot-code-push/wiki/App-Store-FAQ).\n\n## Supported platforms\n\n- Android 4.0.0 or above.\n- iOS 7.0 or above. Xcode 7 is required.\n\n### Installation\n\nThis requires cordova 5.0+ (current stable 1.5.3)\n\n```sh\ncordova plugin add cordova-hot-code-push-plugin\n```\n\nIt is also possible to install via repo url directly (__unstable__)\n```sh\ncordova plugin add https://github.com/nordnet/cordova-hot-code-push.git\n```\n\nAt the end of the installation plugin will recommend you to install [Cordova Hot Code Push CLI client](https://github.com/nordnet/cordova-hot-code-push-cli). This client will help you to:\n- easily generate necessary configuration files;\n- launch local server to listen for any changes in the web project and deploy new version immediately on the app.\n\nOf course, you can use this plugin without the CLI client, but it will make your life easier.\n\n### Quick start guide\n\nIn this guide we will show how quickly you can test this plugin and start using it for development. For that we will install [development add-on](https://github.com/nordnet/cordova-hot-code-push/wiki/Local-Development-Plugin).\n\n1. Create new Cordova project using command line interface and add iOS/Android platforms:\n\n  ```sh\n  cordova create TestProject com.example.testproject TestProject\n  cd ./TestProject\n  cordova platform add android\n  cordova platform add ios\n  ```\n  Or use the existing one.\n\n2. Add plugin:\n\n  ```sh\n  cordova plugin add cordova-hot-code-push-plugin\n  ```\n\n3. Add plugin for local development:\n\n  ```sh\n  cordova plugin add cordova-hot-code-push-local-dev-addon\n  ```\n\n4. Install Cordova Hot Code Push CLI client:\n\n  ```sh\n  npm install -g cordova-hot-code-push-cli\n  ```\n\n5. Start local server by executing:\n\n  ```sh\n  cordova-hcp server\n  ```\n\n  As a result you will see something like this:\n  ```\n  Running server\n  Checking:  /Cordova/TestProject/www\n  local_url http://localhost:31284\n  Warning: .chcpignore does not exist.\n  Build 2015.09.02-10.17.48 created in /Cordova/TestProject/www\n  cordova-hcp local server available at: http://localhost:31284\n  cordova-hcp public server available at: https://5027caf9.ngrok.com\n  ```\n\n6. Open new console window, go to the project root and launch the app:\n\n  ```sh\n  cordova run\n  ```\n\n  Wait until application is launched for both platforms.\n\n7. Now open your `index.html` page in `www` folder of the `TestProject`, change something in it and save. In a few seconds you will see updated page on the launched devices (emulators).\n\nFrom this point you can do local development, where all the changes are uploaded on the devices without the need to restart applications on every change you made.\n\nFor production build do not forget to add the following to your `config.xml` file as it is a required property. Checkout the [wiki](https://github.com/nordnet/cordova-hot-code-push/wiki/Cordova-config-preferences) for more information:\n\n```xml\n<chcp>\n    <config-file url=\"https://5027caf9.ngrok.com/chcp.json\"/>\n</chcp>\n```\n\n### Documentation\n\nAll documentation can be found in details in our [Wiki on GitHub](https://github.com/nordnet/cordova-hot-code-push/wiki).\n\nIf you have some questions/problems/suggestions - don't hesitate to post a [thread](https://github.com/nordnet/cordova-hot-code-push/issues). If it's an actual issue - please, follow [this guide](https://github.com/nordnet/cordova-hot-code-push/wiki/Issue-creation-guide) on how to do that properly.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nordnet/cordova-hot-code-push.git"
+  },
+  "version": "1.5.3"
+}

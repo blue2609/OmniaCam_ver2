@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-packageName="com.OmniaCam.app" id="com.blue2609.workshop" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="CameraPreview">
+        <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>OmniaCam</name>
+    <description>
+        A simple camera app to take multiple pictures for patients
+    </description>
+    <author email="tech4smith@gmail.com">
+        Stanley Setiawan
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <universal-links>
+        <host name="www.omniacorp.com.au">
+            <path event="linkFunctionHandler" url="/cosme/site/inc/omniacam.php*" />
+        </host>
+    </universal-links>
+    <allow-intent href="market:*" />
+    <icon density="ldpi" platform="android" src="res/icon/android/icon-36-ldpi.png" />
+    <icon density="ldpi" platform="android" src="res/icon/android/icon-48-mdpi.png" />
+    <icon density="hdpi" platform="android" src="res/icon/android/icon-72-hdpi.png" />
+    <icon density="xhdpi" platform="android" src="res/icon/android/icon-96-xhdpi.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="AndroidLaunchMode" value="singleInstance" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="AndroidExtraFilesystems" value="files-external,sdcard,files,documents,cache,cache-external,root" />
+</widget>

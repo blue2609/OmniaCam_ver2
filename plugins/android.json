@@ -36,6 +36,12 @@
     },
     "cordova-plugin-screen-orientation": {
       "PACKAGE_NAME": "com.OmniaCam.app"
+    },
+    "cordova-plugin-camera-preview": {
+      "PACKAGE_NAME": "com.OmniaCam.app"
+    },
+    "cordova-plugin-insomnia": {
+      "PACKAGE_NAME": "com.OmniaCam.app"
     }
   },
   "dependent_plugins": {

@@ -318,6 +318,22 @@ module.exports = [
     "clobbers": [
       "cordova.plugins.screenorientation"
     ]
+  },
+  {
+    "id": "cordova-plugin-camera-preview.CameraPreview",
+    "file": "plugins/cordova-plugin-camera-preview/www/CameraPreview.js",
+    "pluginId": "cordova-plugin-camera-preview",
+    "clobbers": [
+      "CameraPreview"
+    ]
+  },
+  {
+    "id": "cordova-plugin-insomnia.Insomnia",
+    "file": "plugins/cordova-plugin-insomnia/www/Insomnia.js",
+    "pluginId": "cordova-plugin-insomnia",
+    "clobbers": [
+      "window.plugins.insomnia"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -333,7 +349,9 @@ module.exports.metadata =
   "cordova-plugin-file-transfer": "1.7.0",
   "cordova-plugin-camera-with-exif": "1.2.2",
   "es6-promise-plugin": "4.2.2",
-  "cordova-plugin-screen-orientation": "3.0.1"
+  "cordova-plugin-screen-orientation": "3.0.1",
+  "cordova-plugin-camera-preview": "0.9.0",
+  "cordova-plugin-insomnia": "4.3.0"
 };
 // BOTTOM OF METADATA
 });

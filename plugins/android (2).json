@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "com.OmniaCam.app"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.OmniaCam.app"
+    },
+    "cordova-plugin-camera-preview": {
+      "PACKAGE_NAME": "com.OmniaCam.app"
+    }
+  },
+  "dependent_plugins": {}
+}
