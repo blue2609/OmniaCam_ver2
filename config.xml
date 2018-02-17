@@ -31,6 +31,10 @@
     </platform>
     <universal-links>
         <host name="www.omniacorp.com.au">
+            <!-- 
+                This one is for document pictures
+                <www.cosmedoctors.com.au> -->
+                    <!-- path = /site/inc/omniacam.php* -->
             <path event="linkFunctionHandler" url="/cosme/site/inc/omniacam.php*" />
         </host>
     </universal-links>
